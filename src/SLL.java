@@ -70,7 +70,7 @@ public class SLL {
 		temp.next = newNode;	
 	}
 	
-	public void addAfterLoc(int location, int newData)
+	public void addAfterData(int location, int newData)
 	{
 		Node newNode = new Node(newData);
 		Node temp = head;
@@ -113,7 +113,24 @@ public class SLL {
 		return;
 	}
 	
-	
+	public void delete(int data)
+	{
+		Node tempNode = head;
+		Node prevNode = null;
+		
+		if(head.data == data)
+		{
+			head = tempNode.next;
+		}
+		
+		while(tempNode.data != data)
+		{
+			prevNode = tempNode;
+			tempNode = tempNode.next;
+		}
+		
+		prevNode.next = tempNode.next;
+	}
 	
 	public void print()
 	{
@@ -134,8 +151,9 @@ public class SLL {
 		list.push(7);
 		list.push(1);
 		list.append(4);
-		//list.addAfterLoc(6, 8);
+		list.addAfterData(6, 8);
 		list.addBetween(6, 7, 9);
+		list.delete(9);
 		
 		System.out.println("\nCreated Linked List is: ");
 		list.print();
