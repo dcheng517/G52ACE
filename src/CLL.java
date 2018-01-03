@@ -69,16 +69,26 @@ Node last;
 		
 		if(last.data == data)
 		{
-			last = tempNode.next;
-		}
-		
-		while(tempNode.data != data)
+			while(tempNode.next != last )
+			{
+				tempNode = tempNode.next;
+				
+			}
+			
+			tempNode.next = last.next;
+			last = tempNode;
+		}else
 		{
-			prevNode = tempNode;
-			tempNode = tempNode.next;
+			while(tempNode.data != data)
+			{
+				prevNode = tempNode;
+				tempNode = tempNode.next;
+			}
+			
+			prevNode.next = tempNode.next;
 		}
 		
-		prevNode.next = tempNode.next;
+		
 	}
 	
 	public void print()
@@ -107,8 +117,7 @@ Node last;
 		list.push(11);
 		list.addBetween(2, 11, 69);
 		list.addBetween(69, 2, 57);
-		list.delete(57);
-		list.addLast(99);
+		list.delete(12);
 		
 		list.print();
 	}
