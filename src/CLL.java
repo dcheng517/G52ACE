@@ -71,8 +71,7 @@ Node last;
 		{
 			while(tempNode.next != last )
 			{
-				tempNode = tempNode.next;
-				
+				tempNode = tempNode.next;			
 			}
 			
 			tempNode.next = last.next;
