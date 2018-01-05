@@ -1,3 +1,3 @@
 # G52ACE
 
-Code testing for Algorithms Correctness and Efficiency to better understand the algorithms.
+Darren learns algorithms and java
