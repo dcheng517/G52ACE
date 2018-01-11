@@ -1,5 +1,8 @@
 package Tree;
 
+import java.util.Queue;
+import java.util.LinkedList;
+
 class Node
 {
 	int key;
@@ -57,6 +60,28 @@ public class BinaryTree {
 		Pre(node.right);
 	}
 	
+	void Level()
+	{
+		Queue<Node> q = new LinkedList<Node>();
+		q.add(root);
+		
+		while(!q.isEmpty())
+		{
+			Node tempNode = q.poll();
+			System.out.print(tempNode.key + " ");
+			
+			if(tempNode.left != null) 
+			{
+				q.add(tempNode.left);
+			}
+			
+			if(tempNode.right != null)
+			{
+				q.add(tempNode.right);
+			}
+		}
+	}
+	
 	void Post()
 	{
 		Post(root);
@@ -90,6 +115,9 @@ public class BinaryTree {
 		
 		System.out.print("\nPostorder traversal: ");
 		tree.Post();
+		
+		System.out.print("\nLevel Order Traversal: ");
+		tree.Level();
 	}
 	
 	
